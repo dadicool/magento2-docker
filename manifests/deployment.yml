@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8sazuredev-e38a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8sazuredev-e38a"
+  template:
+    metadata:
+      labels:
+        app: "k8sazuredev-e38a"
+    spec:
+      containers:
+        - name: "k8sazuredev-e38a"
+          image: "lifen.azurecr.io/k8sazuredev"
+          ports:
+          - containerPort: 80
